@@ -103,7 +103,7 @@
 .content_footer_4 {
     margin-right: 20px;
 }
-
+/* Стиль для разных экранов */
 @media screen and (min-width: 1440px) {
     html {
         font-size: 50px;
