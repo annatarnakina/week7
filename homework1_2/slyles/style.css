@@ -1,0 +1,159 @@
+* {
+    box-sizing: border-box;
+}
+
+/* параметры страницы */
+.conteiner {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 10% 40% 20%;
+}
+
+/* стиль и позиционирование шапки */
+.header {
+    display: grid;
+    grid-column: 1/4;
+    justify-content: center;
+    align-content: center;
+    background-color: lightgray;
+}
+
+/* Стиль и позиционирование основной области */
+.main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 2fr;
+    justify-content: space-between;
+    background-color: peachpuff;
+
+}
+
+/* Позиционирование текста в основной области */
+.main_content_1 {
+    grid-column: 1/3;
+    grid-row: 1/2;
+    align-self: start;
+    justify-self: center;
+}
+
+/* Позиционирование дополнительного контента в основной области */
+.main_content_2 {
+    grid-column: 1/3;
+    grid-row: 2/3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+}
+/* Стиль дополнительного контента основной области */
+.content_1, 
+.content_2, 
+.content_3 {
+    background-color: bisque;
+    text-align: center;
+    margin: 10px;
+}
+
+.content_1 {
+    grid-column: 1/2;
+    grid-row: 1;
+}
+.content_2 {
+    grid-column: 2/3;
+    grid-row: 1;
+}
+.content_3 {
+    grid-column: 1/3;
+    grid-row: 2;
+}
+/* Позиционирование боковой области */
+.sidebar {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+    background-color: lightgreen;
+}
+
+/* Позиционирование футера */
+.footer {
+    grid-column: 1/4;
+    grid-row: 3/4;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 1rem;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    background-color: lightgray;
+}
+
+/* Стиль дополнительного контента футера */
+.content_footer_1,
+.content_footer_2,
+.content_footer_3,
+.content_footer_4 {
+    background-color: white;
+    margin: 10px;
+}
+
+.content_footer_4 {
+    margin-right: 20px;
+}
+
+@media screen and (min-width: 1440px) {
+    html {
+        font-size: 50px;
+    }
+}
+
+@media screen and (max-width: 1020px) {
+    .conteiner {
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+    .header {
+        max-width: 100vw;
+    grid-area: 1/1/2/3;
+    }
+    .main {
+        grid-area: 2/1/3/3;
+        min-height: 20vh;
+    }
+    .sidebar {
+        grid-area: 3/1/4/3;
+    }
+    .footer {
+        grid-area: 4/1/5/3;
+        display: flex;
+        min-height: 30vh;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .header {
+        max-width: 100vw;
+    }
+    .sidebar {
+        display: none;
+    }
+    .main {
+        grid-area: 2/1/3/3;
+    background-color: white;
+    }
+    .main_content_2 {
+        display: flex;
+        flex-direction: column;
+    }
+    .footer {
+        display: flex;
+        min-height: 50vh;
+        flex-direction: column;
+    }
+}
+
+
+
